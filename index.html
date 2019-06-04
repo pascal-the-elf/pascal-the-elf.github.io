@@ -38,11 +38,9 @@
         #bigScreen {
             width: 100%;
             height: 100vh;
-        }
-        #bigScreen > #BStext {
-            height: 100%;
-            line-height: 100vh;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
@@ -57,16 +55,30 @@
         <div class="Item">
             <a href="/research/">Research</a>
         </div>
+        <div class="Item">
+            <a href="/product/">Product</a>
+        </div>
     </div>
     <div id="body">
         <div id="bigScreen">
-            <div id="BStext">
+            <div>
                 <h1>Pascal the Elf</h1>
+                <span>Simple, Kindness, Professional</span>
             </div>
         </div>
     </div>
     <script>
-        
+        var data = {
+            "name": "service",
+            "version": 0.1
+        };
+        save(data);
+        function save(x) {
+            if(typeof x == "string") {
+                x = JSON.parse(x);
+            }
+            localStorage[x.name] = JSON.stringify(x);
+        }
     </script>
 </body>
 </html>
