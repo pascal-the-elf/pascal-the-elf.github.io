@@ -18,12 +18,13 @@ Game = {
         "object": {}
     }
 };
-
-alert = function(a="", b="") {
-    if(a=="" && b=="") return;
-    if(b=="") {
-        Swal.fire(a);
-    } else {
-        Swal.fire(a, b);
-    }
+if(Swal) {
+    alert = function(a="", b="") {
+        if(a=="" && b=="") return;
+        if(b=="") {
+            Swal.fire(a);
+        } else {
+            Swal.fire(a, b);
+        }
+    };
 }
