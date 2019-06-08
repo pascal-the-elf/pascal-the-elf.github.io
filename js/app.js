@@ -1,8 +1,9 @@
 // GameFile
 Game = {
-    "init": function(objectSet=this.default.object, dataSet=this.default.data) {
+    "init": function(objectSet=this.default.object, dataSet=this.default.data, customInit=function(){}) {
         this.data = dataSet;
         this.object = objectSet;
+        customInit();
     },
     "do": function(func) {
         this.func[func]();
