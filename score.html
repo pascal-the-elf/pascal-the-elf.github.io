@@ -1,4 +1,4 @@
- <!DOCTYPE html> <!-- Copyright 2019 JacobLinCool All Rights Reserved. -->
+<!DOCTYPE html> <!-- Copyright 2019 JacobLinCool All Rights Reserved. -->
 <html>
 <head>
     <title>Score Test</title>
@@ -27,7 +27,13 @@
                 graph.lineWidth = 2;
                 graph.stroke();
             }
-            graph.drawImage(GClef, 30, height*(2.5/8), 60, height*(4/8));
+            
+            var img = new Image();
+            img.onload = function() {
+                graph.drawImage(img, 20, height*(2.5/8), 60, height*(4/8));
+            }
+            img.src = "https://upload.wikimedia.org/wikipedia/commons/f/ff/GClef.svg";
+            
         };
         score.init(1200, 200);
     </script>
